@@ -1,0 +1,100 @@
+
+
+	EMPNO	ENAME	MGR	JOB
+	----	-----	----	---
+	101	JACK	-	PRESIDENT
+	102	JANE	101	MANAGER
+	103	JILL	101	MANAGER
+	104	ROBERT	102	CLERK
+
+			JACK (EMPNO->101)
+			|
+	------------------------------------
+		|			|
+		JANE (EMPNO->102)	JILL (EMPNO->103)
+		|(MGR->101)		(MGR->101)
+		|
+		ROBERT (104)
+		(MGR->102)
+
+
+
+
+
+dept
+
+			KING
+			| 10 ACCOUNTING NY
+			| PRESIDENT
+	-----------------------------------
+	|		|		|
+	CLARK		JONES		BLAKE
+	|10		|20		|30
+	|ACCOUNTING	|RESEARCH	|SALES
+	MANAGER		MANAGER		MANAGER
+	|		|		|
+	MILLER	----------------	----------------------------------
+	CLERK	|	|		|	|	|	|	|
+		FORD	SCOTT		MARTIN	ALLEN	TURNER	WARD	JAMES
+		|ANALYST|ANALYST	<--------SALESMAN---------->    CLERK
+		|	|
+		SMITH	ADAMS	
+		CLERK	CLERK
+			
+
+
+
+
+CUSTOMER
+		
+				   CHICAGO <--- DEPT (1)
+				     |
+(3)CUSTOMER---> JOCKSPORTS  <--->  TURNER <-- EMP (2)
+		|100		   (7844)
+	--------------------------
+	|	|	|	|
+	620	606	609	621 <-- ORD (4)
+	|
+-----------------------------
+	|
+	ITEMID	PRODID	QTY	 <---- ITEM (5)
+	1	100860	10   ->ACE TENNIS RACKET I <-- PRODUCT (6)
+	2	200376	1000 ->SB ENERGY BAR-6 PACK
+	3	102130	500  ->RH: "GUIDE TO TENNIS"
+		|
+		
+	
+
+
+
+aggregate functions
+-----------------------
+
+group by clause
+---------------
+	
+nested query
+--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
