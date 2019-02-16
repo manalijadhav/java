@@ -1,0 +1,49 @@
+
+
+
+
+	(1)POJO	(2)dao interface
+	Dept	DeptDAO		
+	|dno	|create(Dept x);
+	|dnm	|update(Dept x);
+	|loc	|delete(int dno);
+	|	|select(dno); ArrayList<Dept> selectAll();
+	---------
+	    |(3) dao interface implementation
+	    |
+	DeptDAOImpl	<-----------business logic code
+	create(Dept x) { }		|
+	update() { }			|
+	delete() { }			client
+	select() { }
+				+-----------+	Enter dept no	87
+				|create dept|	Enter dept name	Audit
+				+-----------+	Enter dept loc	MP
+						SAVE
+					Dept d = new Dept(87,Audit,MP);
+					DeptDAOImpl dao = new DeptDAOImpl();
+					d.create(d);
+
+				1. select payee / add payee
+				2. 
+
+
+
+				10
+				9
+				7
+				
+
+
+
+				1	
+	-------------------------------------------------
+
+
+
+
+
+
+
+
+

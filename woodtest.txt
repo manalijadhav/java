@@ -1,0 +1,40 @@
+public class Wood 
+{
+	public static void main(String[] args)
+	{
+		Trees t = new Trees();
+			WoodTest wt = t.createWood();
+			wt.Cut();
+	}
+}
+
+class Jungle
+{}
+
+class Trees extends Jungle
+{
+	WoodTest createWood()
+	{
+		System.out.println("Trees are in Jungle...");
+		System.out.println("Wood is being produced...");
+
+		WoodTest w = new WoodTest();
+		System.out.println("Wood is produced...");
+		return w;
+	}
+}
+
+
+public class WoodTest
+{
+	public static void main(String[] args)
+	{
+		WoodTest wt = new WoodTest();
+	}
+		void Cut()
+		{
+
+			System.out.println("Wood produces chair");
+		}
+	}
+

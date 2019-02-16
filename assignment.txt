@@ -1,0 +1,38 @@
+
+    Object
+        |11			Air
+   Flight			| checkAirSignal() 1
+	|5		--------------------------------------
+	|		|		|		|
+	|  Aviation	Airport		Airbase		AirCargo
+	|	| 2	|2		|2		|2
+	|     +-+-------+               +--+
+	|     |                            |
+     -------[ | ] ----------------------+-[|]---------------------
+	|     |				|  |		|
+CommercialFlight		FighterFlight	   CargoFlight
+
+9 function exclusive
+
+11 from Object - inherited
+
+3+2 Flight - inherited
+2 mandates
+
+2 mandates 
+2 mandates
+1 mandates
+	
+interface Air
+{
+}
+
+interface Airport extends Air
+{
+	void checkTickets();
+}
+
+interface Airbase extends Air
+{
+	void checkMissiles();
+}

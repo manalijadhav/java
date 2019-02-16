@@ -1,0 +1,198 @@
+
+
+
+
+
+
+
+
+Passing object as parameter/argument to a function
+
+		class Hospital
+		{
+			void treatment(Doctor d)
+			{
+
+			}
+		}
+
+Returning object as a return value from a function
+
+1)	Doctor d = new Doctor();
+
+	College 
+	  | isA
+2)	MedicalCollege medColl = new MedicalCollege();
+
+	Doctor x  = medColl.study();
+
+
+		class MedicalCollege
+		{
+			Doctor study()
+			{
+				d = new Doctor(.....);
+				return d;
+			}
+
+			float calcAvg(int i, int j, int k)
+			{
+				return (i+j+k) /3;
+			}
+		}
+
+1) ClarifiedButter cb = new ClarifiedButter();
+
+2) FarmHouse fh = new FarmHouse();
+
+   ClarifiedButter cb = fh.create(mlk);
+
+
+
+	fh.create(mlk);
+
+		class FarmHouse
+		{
+			Milk mlk = new Milk();
+
+			ClarifiedButter create()
+			{
+				m.boil..
+				...
+				ClarifiedButter clarBuff = new ClarifiedButter();
+				return clarbuff;
+			}
+		}
+
+				College
+				|
+		-------------------------------------
+			|
+		MedicalCollege 			
+
+class College
+{
+}
+
+class MedicalCollege extends College // isA
+{
+	//hasA
+	Student stud1 = new Student(); // array, arralist, linkedlist collection...
+
+	Doctor create()
+	{
+
+	}
+}
+	
+
+hasA relationship
+------------------
+	- hasA means composition
+
+		"without engine car is not a car"
+
+	hence Engine's object is kept as a DATA MEMBER IN THE CAR CLASS
+	OBSERVE IT
+
+	lIKE A TUB IN WASHING MACHINE
+	
+
+	GET READY FOR THE RUSH THIS TIME 5 QUETIONS
+		JAVA AND ORACLE
+
+NO QUESTIONS
+
+
+
+	its the vital part of an object
+	without which the object creation has no sense.
+
+	its in shared folder
+	
+	HasATest.java
+
+	u may discuss on pair basis
+
+	at 17.15 u have to innovate AN example on ASSOCIATION
+	//isA		hasA			usesA			producesA
+
+	U MAY CARRY FORWARD TEH EARLIER EXAMPLE
+
+	LIKE THE Lawyer example .... 
+
+	or Alphabet example...and so on
+
+
+
+
+
+
+
+
+
+
+
+
+class ReportCard
+{
+	int phy,chem,maths,eng1,eng2,eng3, total,grade,per;
+}
+class Person {  gender, age, name }
+class Student extends Person  // isA
+{
+	int rollno, String collegeName, String stream;
+	ReportCard rpt1 = new 	ReportCard (); //hasA
+	ReportCard rpt2 = new 	ReportCard (); //hasA
+	ReportCard rpt3 = new 	ReportCard (); //hasA
+	void study()	{
+
+	}
+}	so when
+	Student s1 = new Student(); //inside s1 there are 3 report cards
+	creation of s1 will trigger the creation of rpt1,rpt2,rpt3 indirectly
+	u dont have to create any object of ReportCard now, it would be created
+	alongwith the creation of s1...this is the THEME of hasA relationship
+
+how is the stack and heap diagram of line => Student s1 = new Student()
+
+	<-----------------------Student --------------------------------------->
+	<--Person------->				 <---ReportCard-------->
+	gender age, name  rollno  collegename streamname  rpt1   rpt2  rpt3
+	--------------------------------------------------------------------------
+	|3434 |	22 |Jane |123	|Thakur     |Mechanical  |300	|400 | 500       |
+	---------------------------------------------------|-------|----|---------
++------>100						   |	   
+|					+------------------+ and so on	   
+100					|	phy  chem  maths  eng1 eng2 eng3 total grade per
+s1					|	----------------------------------------------------
+					|	|	|	|	|	|	\	....
+					|	----------------------------------------------------
+					+------>300
+
+						phy  chem  maths  eng1 eng2 eng3 total grade per
+						----------------------------------------------------
+						|	|	|	|	|	\	....
+						----------------------------------------------------
+						400
+
+						phy  chem  maths  eng1 eng2 eng3 total grade per
+						----------------------------------------------------
+						|	|	|	|	|	\	....
+						----------------------------------------------------
+						500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

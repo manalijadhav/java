@@ -1,0 +1,33 @@
+
+
+	
+	1. what is the output of the pl sql code
+	declare
+		cursor deptcur is select * from dept;
+	begin
+		for deptrec in deptcur
+		loop
+			dbms_output.put_line('deptno ' || deptrec.deptno);
+		end loop;
+		open deptcur;
+		for deptrec in deptcur
+           
+		loop
+			dbms_output.put_line('deptno ' || deptrec.deptno);
+		end loop;
+	end;
+	a. cursor already open	b. invalid cursor
+	c. both the for loop runs successfully
+	d. first for loop runs, second for loop with error
+
+
+
+this.
+super()
+
+super.
+this()
+
+
+
+

@@ -1,0 +1,12 @@
+
+
+ANY DATA OR MEMBER Functions
+------------------------------
+	this.	-- refer to the curent class
+	super.  -- refer to the nearest parent class
+
+
+CONSTRUCTOR ONLY
+-------------------
+	this()	-- refer to the curent class constructor
+	super() -- refer to the nearest super class constructor

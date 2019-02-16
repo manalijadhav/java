@@ -1,0 +1,267 @@
+				Java Technology
+					|
+		-------------------------------------------------
+		|			|			|
+		J2SE			J2EE			J2ME
+		|			|			|
+		Standard		Enterprise		Micro
+		|			|
+-----------------		---------------------
+|				|		|
+Language Fundamentals		Web		EJB
+oops				|		|
+packages with 			Servlets   --------------
+access specifiers		JSP	   |	|	|
+					Session	Entity	Message
+exception handling			|
+multithreading			...	..	..	..
+
+generics
+collections
+
+jdbc
+file handling
+
+annotations
+reflection
+
+
+
+
+
+
+50 questions - 4 options  200 options - secure the 50 right options trapped
+in other 150 false options
+
+
+Thread
+|
+set of instructions
+
+101	suresh	50000
+102	haresh	60000
+103	naresh	70000
+104	paresh	80000
+105	ramesh	90000
+.....
+
+FK
+acno	credit	debit	desc		balance	time	clerk
+101	5000		cashdep		55000	10:30	teller1
+101	7000		cashdep		62000	10:40	teller2
+101	8000		cashdep		70000	10:50	teller3
+101		5000	cashwith	65000	11:00	ATM
+
+
+				Deposit counter
+		Teller1			Teller2			Teller3
+		|			|			|
+		getBalance()		getBalance()		getBalance()
+		|			|			|
+		calcAmt();		calcAmt();		calcAmt();
+		|			|			|
+		setBalance();		setBalance();		setBalance();
+		|			|			|
+		Customer1		Customer2		Customer3
+		|			|			|
+a/c		101			101			101
+cash		5000/-			7000/-			8000/-
+deno		100 (50)		500 (14)		2000 (4)
+time		10:30am			10:30am			10:30am
+
+
+
+
+
+
+	
+
+		the ocean is vast
+		my boat is frail
+		thou "art" is with me
+		and everything is well
+
+
+
+
+		Object			Runnable / Running
+		|11			| run(); / runVehicle();
+		|			|
+	extends	|   +-------------------+--------  Frame
+		|   | implements		|   |
+		Thread / Car			MyFrame -> run() { }
+		   |run() { what to run }	<-------------------------------+
+		   |						|
+		   |start() { how to run } -------> talks to the JVM Thread Scheduler
+		   |
+		   | runVehicle() { }
+		   |
+	   	   |	 framework - semi-developed application
+-----------------------------------------------------------------
+		   |extends(1)		
+		   |
+	       MyThread	/ SedanCar		
+		
+		run() { code for threading... } (2)
+
+I. By extending java.lang.Thread class
+
+1. extend from java.lang.Thread class
+
+2. override its run() method
+   write the logic inside this method, which will participate in threading env
+
+3. create the object of the extended class
+	MyThread mt = new MyThread();
+	mt.start();
+
+4. mt.start() --> will invoke your overridden version of run() method
+
+
+II. By implementing the java.lang.Runnable interface		
+
+1. implement java.lang.Runnable interface
+	class MyFrame extends Frame implements Runnable //isA
+
+2. implement its run() method - which is a mandate
+	public void run() {	for (int i = 1; i <=10; i++) { // frames activity
+
+3. create the object of MyFrame class
+   create the object of java.lang.Thread class and to its constructor pass the 
+   above object ( means the Thread is aware who is the Frame)
+
+	MyFrame mf1 = new MyFrame(150,"Ping");
+	Thread t1 = new Thread(mf1);
+
+4. call Thread's start method --> which will call Frame's run()
+
+
+
+
+Thread Synchronization
+----------------------------
+
+		t1	t2	t3
+		|	|	|
+		+-------+-------+
+			|
+		-------[-]---------
+		|	t1	|
+		|withdraw();	|
+		|		|
+		------------------
+SavingsAccount obj1 = new SavingsAccount ();
+  |
+class SavingsAccount
+{
+	synchronized  withdraw()  Asynchronous
+	{
+	1
+	2
+		synchronized {	 <-- code level
+			3
+			4
+		}
+	5
+	6
+}
+
+
+Generics and Collections
+-----------------------------
+
+	generic / templates
+			|
+		a common logic spanned across various data types
+
+Offer Letter
+-------------------------
+	LTI ....
+	.......
+
+	Subject : Offer Letter
+		..
+		..
+	...
+
+
+ $$$%%%%%%###$$%$$$%%$$$
+-------------------------
+
+int i=10;
+int j=20;
+int temp = i;
+i = j;
+j = temp;
+
+
+
+
+
+
+
+
+Components Orthogonal Space
+
+
+			x <-- datatype  -- int, float, ButterMilk, String, Song...
+			|
+			|
+ 			+
+                       / \
+                      /   \
+		     /     \
+		    /       \
+		   y	     z
+		   |	     |
+	     container	    algorithm
+		|		|   
+		+----Iterator---+
+MyIntegers	         |	swap, search, sort
+MyFloats	         |
+MyStrings		 |
+MySongs			 |
+Glass <---------->     Straw<---->drink()
+|
+ButterMilk
+	
+ArrayList		Iterator		Collecions.sort()
+LinkedList		ListIterator		Collections.search()
+TreeSet
+HashSet
+			     Aviation
+			      | 
+		----------------------------
+		|			|
+		Airport			Airbase
+		|			|
+	CommercialFlight		FighterFlight
+
+			  Collection  <-- interface
+				|50 methods
+		----------------------------------
+		|				|
+		List				Set <-- interfaces
+		|duplicate			|unique
+		|20				|30
+	--------------------		-----------------------
+	|		|		|		|
+     ArrayList	   LinkedList		TreeSet		HashSet	
+	|		|		|		|
+growable array	       CRUD		Search		search/CRUD
+  Search ->		
+		linear				non-linear
+		
+
+			
+
+
+
+
+
+
+
+
+
+
+

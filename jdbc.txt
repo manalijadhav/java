@@ -1,0 +1,158 @@
+
+ODBC
+------
+	 
+
+JDBC
+------
+
+	Java DataBase Connectivity
+
+	JavaApp	<----------------> Database
+frontend		|		backend
+|			|		
+business		|		data <-- tables (normalized)
+logic	interface----->Driver		logic <-- functions/procedures
+			|
+		-------------------------
+		|	|	|
+	OracleDriver.class		<-------------ojdbc6.jar
+
+
+tar
+Tape Archieve = a single file on the tape decive 		
+
+jar
+Java ARchieve = a single file ( collection of multiple files )
+
+	jar -cvf myproject.jar  *.class *.gif *.html *.css		
+
+		-c create
+		-v verbose
+		-f filename
+
+	jar -tvf myproject.jar
+		-t table of content
+
+	jar -xvf myproject.jar
+
+
+
+flow diagram
+
+				<Driver>
+				|   |
+				|  OracleDriver
+		--------------------------------
+			|	
+		   [DriverManager]
+			|  registerDriver <-- OracleDriver
+			|  getConnection <-- IP port dbinstance (xe)
+			|
+		 <Connection>
+			|
+	----------------------------------------------
+		|		|		|
+	<Statement	PreparedStatment	CallableStatement>
+	 select		insert/update/delete	functions/procedures
+
+			
+1. load the driver - by registering it
+	DriverManager.registerDriver(new OracleDriver());
+
+2. acquire the connection -
+	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Newuser123");
+
+	T4Connection t4 = new 	T4Connection ("jdbc:oracle:thin:@localh:1521:xe","system","Newuser123");
+
+	
+3. 	Make a desired statement
+	Statement	  st	=	conn.createStatement();
+	PreparedStatement pst 	= 	conn.prepareStatement("insert..);
+	CallableStatement cst   = 	conn.prepareCallableStatement();
+
+C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib
+
+4. 	execute that desired statement
+	ResultSet rs = 	st.executeQuery("select * from emp");
+
+5.	here rs is the data grid, process it
+
+
+	Flower f 	= Garden.getFlower();
+	Rose r = new Rose();
+
+class T4Connection implements Connection
+{
+}
+
+interface Flower
+{
+	void flowering();
+}
+class Rose implements Flower
+{
+}
+
+class Garden
+{
+	static Flower getFlower() // producesA Flower
+	{
+		Rose r= new Rose();
+		return r;
+	}
+}
+
+
+
+RPC
+RMI	
+
+DBSERVER1	DBSERVER2	DBSERVER3
+|		|		|
+-----------------------------------
+		|
+		App server (BusinessLogic is here)
+		|
+	-------------------------
+	|	|	|	
+	PC	ATM	MobileApp
+
+
+Design pattern
+-------------------
+
+	1. factory method 
+	2. singleton 
+		
+	3. dao 
+
+
+
+		dao pattern
+
+
+		database tables (4) <-- data layer
+			|
+		"Data Access" Object (3) ....> service layer
+			|
+		your business logic <-- coupon counter  (2)
+			|
+------------------------------------------
+	|	
+	client1	<-menu 5 choices  (1)
+	client2 <-menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+

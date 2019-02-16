@@ -1,0 +1,119 @@
+
+
+	1. A default constructor is known as 
+
+		a. implicit no-arg constructor
+		b. explicit no-arg constructor
+		c. constructor without return value
+		d. constructor with argument
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. What is the output of the following code
+
+class Parent{	
+	Parent() { System.out.println("Parent"); }
+}
+class Child extends Parent
+{
+	Child() {
+		System.out.println("Child"); 		
+	}
+	Child(int i) {
+		super();
+		this();
+	}
+}
+a. Parent Child	   b. Child Parent	c. Error	d. none of the above
+
+
+
+
+
+3. what is the output of the pl sql code
+	declare
+		cursor deptcur is select * from dept;
+	begin
+		for deptrec in deptcur
+		loop
+			dbms_output.put_line('deptno ' || deptrec.deptno);
+		end loop;
+		close deptcur;
+		for deptrec in deptcur
+           
+		loop
+			dbms_output.put_line('deptno ' || deptrec.deptno);
+		end loop;
+	end;
+	a. cursor already open	b. invalid cursor
+	c. both the for loop runs successfully
+	d. first for loop runs, second for loop with error
+
+
+
+
+
+
+
+
+
+
+
+
+4.	How many keywords in Java
+
+		a. 47
+		b. 57	
+		c. 58
+		d. 48
+
+
+
+
+
+
+
+5.	Which trigger would be executed first
+
+		a. row level
+		b. statement level
+		c. before row level
+		d. after statement level
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

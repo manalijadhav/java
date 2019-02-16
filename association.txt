@@ -1,0 +1,145 @@
+
+		class ElectricalDevice
+		{
+
+		}
+
+		Bulb extends ElectricalDevice //isA
+		{
+			Filament f  = new Filament(); //hasA
+	
+		producesA
+			Light glow(Electricity ele) //usesA
+			{
+
+			}
+		
+		}
+
+
+				Association
+			
+			Person <-- generalization
+			| gender, age, name
+			| PanCard pCard = new PanCard() <-- hasA
+	-----------------------------------
+		|isA
+		|
+		Student <-- specialization
+		|
+		| rollno, collegeName, Stream
+		| ReportCard rpt1, rpt2, rpt3 ..... hasA  COMPOSITION
+		|	studying()
+		|	studying(Phone p) <-- usesA
+		|	Project create(); <-- producesA
+		|isA
+		Employee
+		| empno, companyName, desg, 
+		| SalarySlip slip1, slip2..... hasA
+		|
+
+
+
+
+
+	person
+
+	student
+
+	pancard
+
+	reportcard
+
+
+	phone
+
+	smartphone
+
+	project
+
+
+--------------------------------------------------------------------------------
+	|	field		|	method		|	class
+--------------------------------------------------------------------------------
+final	| cannot change,CONSTANT|	cannot override	|cannot be extended
+--------------------------------------------------------------------------------
+static	| shared data across	|is used to refer the 	|	-		
+	| all the instances of  |other static members	|
+	| the class		|of the class		|
+--------------------------------------------------------------------------------
+abstract|	NA		|"partial contract"of a	|a class with "optional"			
+	|			|class			|partial contract
+--------------------------------------------------------------------------------
+interfaces
+
+			BA
+			|
+		-------------------
+		|	|	|
+		SA	CA	CRA
+		|
+	final	FDA
+		|
+		????
+
+
+
+1			GeometricalShape
+				| draw(); calcPeriPhery(); calcArea();
+		------------------------------------
+		|		|		|
+2		Circle		Square		Triangle
+		|rad1		|side1		
+		|		|
+3		Ellipse		Rectangle
+		rad2		side2
+
+
+
+
+interfaces
+-------------------
+		the class with pure "partial contract"
+
+		all the methods are abstract
+		it cannot have non-abstract methods
+
+Flight Framework 
+1				Flight(ac)
+				|fly();land();
+		----------------------------------------------------
+		|   				|		|
+2		|  Airport(i)	Aviation(i)	|		|
+	extends	|   |chcktkt	|lat,alt	|		|
+		|   |issuboard	|   |		|Airbase(i)	|  AirCargo(i)
+		|   ------------    +-----+     | |checkMissiles|   |checkCapacity	 
+		|     | implements	  |	| |fireMissiles	|   |
+3	CommercialFlight		FighterFlight		CargoFlight 
+
+layer 3 is implementation of the framework
+
+
+				AIR 
+...........................................................
+|              |              |
+AIRPORT       AIRBASE        AIRCARGO
+These are extended from AIR class
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

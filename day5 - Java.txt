@@ -1,0 +1,285 @@
+
+
+Exception handling
+ |
+runtime error
+
+		try
+		{
+			code
+			code
+			code
+		}
+		catch(Exception of type 1)
+		{
+		}
+		catch(Exception of type 2)
+		{ 
+			error handling mechanism
+		}
+		catch(Exception of type 3)
+		{
+		}
+		finally
+		{
+			
+		}
+
+
+
+		try
+		{
+			open file1
+			open file2
+			open file3
+			some activity
+			close file1
+			close file2
+			close file3
+		}
+		finally <-- mandate
+		{
+			if file1 not closed then close file1
+			if file2 not closed then close file2
+			if file3 not closed then close file3
+		}
+
+		try
+		{
+			open file1
+			open file2
+			open file3
+			some activity
+			close file1
+			close file2
+			close file3
+		}
+		catch()
+		{
+		}
+		finally <-- optional
+		{
+			if file1 not closed then close file1
+			if file2 not closed then close file2
+			if file3 not closed then close file3
+		}
+
+checked and unchecked by the compiler
+
+javac  A.java
+
+java   A.class
+				Object
+				|isA
+		-------------------------------------
+		|	|	|
+		String	System	Throwable
+				|isA
+		-----------------------------------
+		|			|
+		Error			Exception
+		|			|isA (checked by the compiler)
+  VirtualMachineError	-------------------------------------
+  ThreadDeath		|		|		|	
+  AWTError	   RuntimeException	IOException  SQLException
+  AssertionError	|isA
+  IOError  		|(unchecked by the compiler)
+	------------------------------------------
+	|isA		|			|
+NullPointerException ArithmeticException IndexOutOfBoundsException
+						|
+		------------------------------------------------
+		|					|
+StringIndexOutOfBoundsException		ArrayIndexOutOfBoundsException
+  str.charAt(undefined index)
+
+					
+
+
+
+
+
+
+
+
+1)	manual lock	Lock + Key
+
+2) 	semi lock	Lock can be Auto(no key required) + key required to openit
+3) 	auto lock	Lock is deployed The Door (no key required)+ key to openit
+
+
+
+
+
+
+
+
+
+
+User defined Exceptions
+---------------------------
+
+		--> runtime ->		-->	--	-->
+You At home -----------------------------------------> Bank
+ |
+compile env
+|
+passport size photo
+aadhar card
+
+pen
+suff cash
+
+
+		Account related exceptions
+
+	checked				unchecked 
+	|				|
+CarKeyNotFoundException			OldPhotoException
+DocumentNotFoundException		InsufficientAccountOpeningBalanceException
+					PenIsOutOfInkException
+					TrafficException
+					BankHalfDayException
+					BankClosedException
+					PanCardNotFoundException
+					MismatchedAddressException
+		
+	
+		travel related exception
+
+			short drive
+FuelException	StepneyException TrafficException RedSignalDishonouredException
+BatteryException  LicenceException InsurancePolicyExpiredException
+AccidentException PUCException 	RCDocumentNotFoundException	
+CarKeyNotFoundException CarDoorNotOpeningException CarNotClosedException
+CarNotStartingException 	CarPuncturedException
+
+			short drive
+
+	certain to be verified		certain would arise
+	at the parking/home		at the rumtime
+	|				|
+CarKeyNotFoundException		RedSignalDishonouredException
+CarNotStartingException		TrafficException
+CarDoorNotOpeningException	FuelException
+CarNotClosedException		CarPuncturedException
+CarPuncturedException		AccidentException 
+BatteryException 
+
+-------------------------------------
+
+FuelException	StepneyException TrafficException RedSignalDishonouredException
+BatteryException  LicenceException InsurancePolicyExpiredException
+AccidentException PUCException 	RCDocumentNotFoundException	
+CarKeyNotFoundException CarDoorNotOpeningException CarNotClosedException
+CarNotStartingException 	CarPuncturedException
+
+
+			long drive
+
+	certain to be verified		certain would arise
+	at the parking/home		at the rumtime
+	|				|
+FuelException				AccidentException 
+StepneyException 			RedSignalDishonouredException
+BatteryException  			TrafficException 
+LicenceException 			CarPuncturedException
+InsurancePolicyExpiredException
+PUCException 	
+RCDocumentNotFoundException	
+CarKeyNotFoundException 
+CarDoorNotOpeningException 
+CarNotClosedException
+CarNotStartingException 	
+CarPuncturedException
+
+
+	void fundTransfer(sa, ta, amt)
+	{
+		search ta
+		if ta found
+		then
+			search sa
+			if sa found
+			then
+				find sa bal is suff
+				if sa bal suff
+				then
+					sa.withdraw
+					commit
+
+					ta.deposit
+					commit
+
+					...
+
+				else
+					InsufficientBalanceException i = new InsufficientBalanceException();
+					throw i;
+			else
+				sa not found
+		else
+			TargetAccountNotFoundExceptin t = new  	TargetAccountNotFoundExceptin ();
+			throw t;
+		fi
+
+	}
+
+
+
+
+	class Transaction
+	{
+		void transctionService()
+		{
+		  try
+		  {
+			fundTransfer(s1,t1,5000);
+		  }
+		  catch(InsufficientBalanceException  x)
+		  {
+		  }
+		  catch(TargetAccountNotFoundExceptin y)
+		  {
+
+		  }
+
+		}
+	}
+
+	isA hasA			usesA producesA
+	Infrastructural			Functional/Operational	
+
+	Vehicle		 Key		  Person
+	|		  | usesA	  |isA
+	Car <----------	CarKey --------- Driver
+	  Engine			    DrivingLicence <--hasA
+
+
+
+
+1	   Exception
+		|
+	-------------------------------------
+		|			|
+		|		RuntimeException	2
+		|			|
+2	CarException		CarTravelException	3
+		|			|
+	--------+			|
+	|				|	
+CarDoorNotOpeningException		|
+					|
+	----------------------------------------------------------
+	|			|				|
+CarPuncturedException	RedSignalDishonouredException	CarAccidentException
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+
+
+	1. OOPS
+	2. Exception handling
+
+	3. multithreading
+	4. generics and collections
+	5. file handling
+	6. jdbc
+
+
+	6 topics java		SQL	PLSQL
+	(30)			10	10
